@@ -1,3 +1,9 @@
+lcpipe
+======
+
+This package collects scripts and other tools for performing
+lightcurve analysis with fermipy.
+
 Creating Directory Structure
 ----------------------------
 
