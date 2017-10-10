@@ -1,5 +1,5 @@
 data:
-  evfile : /nfs/slac/g/ki/ki20/cta/mdwood/fermi/data/P8_SOURCE_V6/P8R2_SOURCE_239557414_528835414_z100_r180_ft1.lst
+  evfile : /nfs/slac/g/ki/ki20/cta/mdwood/fermi/data/P8_SOURCE_V6_HE/P8R2_SOURCE_239557414_528835414_z100_r180_ft1.lst
   scfile : /nfs/slac/g/ki/ki20/cta/mdwood/fermi/data/P8_P302_BASE/P8_P302_SOURCE_239557414_528835414_ft2.fits
   ltcube : /u/gl/afrancko/ki-disk2/blazars/ltcube_9years.fits
 
@@ -9,7 +9,7 @@ binning:
   binsperdec : 8
 
 selection :
-  emin : 100
+  emin : 1000
   emax : 1000000 #316227.76
   zmax    : 90
   evclass : 128
