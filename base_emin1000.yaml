@@ -38,7 +38,7 @@ model:
   catalogs : ['3FGL']
 
 lightcurve:
-  multithread : True
+  multithread : False
   nthread : 2
 
 #fileio:
