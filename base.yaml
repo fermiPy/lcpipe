@@ -40,7 +40,8 @@ model:
 lightcurve:
   multithread : False
   nthread : 2
-
+  save_bin_data : False
+  
 #fileio:
 #   outdir : null
 #   logfile : null
