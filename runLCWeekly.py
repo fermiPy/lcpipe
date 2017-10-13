@@ -20,7 +20,7 @@ def main():
     parser.add_argument('--source', default = None)
 
     args = parser.parse_args()
-    gta = GTAnalysis(args.config, fileio={'usescratch' : False})
+    gta = GTAnalysis(args.config)
 
     if args.source is None:
         src_name = gta.roi.sources[0].name

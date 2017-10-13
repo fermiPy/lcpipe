@@ -20,7 +20,7 @@ def main():
     parser.add_argument('--source', default = None)
 
     args = parser.parse_args()
-    gta = GTAnalysis(args.config, fileio={'usescratch' : False})
+    gta = GTAnalysis(args.config)
 
     if args.source is None:
         src_name = gta.roi.sources[0].name
@@ -29,6 +29,11 @@ def main():
     gta.optimize()
 
     loc = gta.localize(src_name, free_radius=1.0, update=True, make_plots=True)
+
+    model = {'Index' : 2.0, 'SpatialModel' : 'PointSource'}
+    srcs = gta.find_sources(model=model, sqrt_ts_threshold=5.0,
+                            min_separation=0.5)
+    
     sed = gta.sed(src_name, free_radius=1.0, make_plots=True)
     gta.tsmap(make_plots=True)
     gta.write_roi('fit0')    
