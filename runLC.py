@@ -28,6 +28,16 @@ def main():
     gta.setup()
     gta.optimize()
 
+    if (gta.roi[src_name]['ts'] > 1000. and
+        gta.roi[src_name]['SpectrumType'] == 'PowerLaw'):
+        gta.set_source_spectrum(src_name, spectrum_type='LogParabola',
+                                spectrum_pars={'beta' : {'value' : 0.0, 'scale' : 1.0,
+                                                         'min' : 0.0, 'max' : 2.0}})
+
+    gta.free_source(src_name)
+    gta.fit()
+    gta.free_source(src_name, False)
+
     loc = gta.localize(src_name, free_radius=1.0, update=True, make_plots=True)
 
     model = {'Index' : 2.0, 'SpatialModel' : 'PointSource'}
