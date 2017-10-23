@@ -36,6 +36,8 @@ def main():
     
     sed = gta.sed(src_name, free_radius=1.0, make_plots=True)
     gta.tsmap(make_plots=True)
+    gta.tsmap(prefix='excludeSource', exclude=[src_name], make_plots=True)
+
     gta.write_roi('fit0')    
     lc = gta.lightcurve(src_name, binsz=86400.*28.0, free_radius=3.0, use_scaled_srcmap=True,
                         multithread=False)
